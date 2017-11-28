@@ -56,18 +56,6 @@ void get_input() {
     hidTouchRead(&touch);
 }
 
-void rand_str(char *dest, size_t length) {
-    char charset[] = "0123456789"
-                     "abcdefghijklmnopqrstuvwxyz"
-                     "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-    while (length-- > 0) {
-        size_t index = (double) rand() / RAND_MAX * (sizeof charset - 1);
-        *dest++ = charset[index];
-    }
-    *dest = '\0';
-}
-
 void keyboard_open(char *initial) {
     swkbdOpen = true;
 	swkbdInit(&swkbd, SWKBD_TYPE_NORMAL, 3, -1);
